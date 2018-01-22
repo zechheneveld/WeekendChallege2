@@ -19,22 +19,27 @@ public class Main {
         BankAccount kymAcc = new BankAccount("Kym", "93827", 0);
 
 
-        zechAcc.deposit(57000);
-        jakeAcc.deposit(57000);
-        joanAcc.deposit(57000);
-        scottAcc.deposit(57000);
-        loriAcc.deposit(57000);
-        mannyAcc.deposit(57000);
-        koddyAcc.deposit(57000);
-        tedAcc.deposit(57000);
-        markAcc.deposit(57000);
-        kymAcc.deposit(57000);
+        BankAccount[] listofAccounts = {zechAcc, jakeAcc, joanAcc,
+                                        scottAcc, loriAcc, mannyAcc,
+                                        markAcc, koddyAcc, tedAcc, kymAcc};
 
-        jakeAcc.withdraw(0);
 
-        System.out.println("Jake has " + jakeAcc);
-        System.out.println("Zech has " + zechAcc);
+        for (int i = 0; i < listofAccounts.length; i++) {
+            listofAccounts[i].deposit(57000);
+            System.out.println(listofAccounts[i].name + " has " + listofAccounts[i].balance);
 
+        }
+
+        for (BankAccount specificAccount : listofAccounts){
+
+            System.out.println(specificAccount.name + " received 200 as a bonus:");
+            specificAccount.deposit(500);
+            System.out.println(specificAccount.name + "'s new balance is: " + specificAccount.balance);
+        }
+
+        System.out.println("Withdraw 500 from Zech's account");
+        listofAccounts[0].withdraw(500);
+        System.out.println(listofAccounts[0].name + "'s new balance is: " + listofAccounts[0].balance);
         }
 
     }

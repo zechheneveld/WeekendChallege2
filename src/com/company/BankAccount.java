@@ -25,7 +25,7 @@ public class BankAccount {
 
     @Override
     public String toString() {
-return "" + balance;
+    return name + " has " + balance;
     }
 
 
