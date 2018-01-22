@@ -25,7 +25,7 @@ public class BankAccount {
 
     @Override
     public String toString() {
-return "Jakes account has " + balance;
+return "" + balance;
     }
 
 
